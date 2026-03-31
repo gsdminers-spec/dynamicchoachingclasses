@@ -1,42 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand-red: #D32F2F;
-  --color-brand-gold: #FFB300;
-  --color-brand-blue: #1565C0;
-  --color-brand-black: #0F0F13;
-  --color-brand-dark: #1A1A24;
-  --color-brand-light: #F8F9FA;
+  --color-brand-primary: #2563EB; /* Trust Blue */
+  --color-brand-secondary: #0F172A; /* Deep Slate */
+  --color-brand-accent: #10B981; /* Emerald Green */
+  --color-brand-warm: #F59E0B; /* Amber/Gold */
+  --color-brand-alert: #EF4444; /* Rose/Red */
+  
+  --color-bg-light: #F8FAFC; /* Slate 50 */
+  --color-bg-white: #FFFFFF;
+  --color-text-main: #0F172A;
+  --color-text-muted: #64748B;
   
   --font-inter: var(--font-inter);
 }
 
 @layer base {
   body {
-    background-color: var(--color-brand-black);
-    color: var(--color-brand-light);
+    background-color: var(--color-bg-light);
+    color: var(--color-text-main);
     font-family: var(--font-inter), sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
   }
 
-  /* Custom scrollbar for a more futuristic feel */
+  /* Smooth Custom Scrollbar */
   ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
   }
 
   ::-webkit-scrollbar-track {
-    background: var(--color-brand-black);
+    background: var(--color-bg-light);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: #333;
-    border-radius: 3px;
+    background: #CBD5E1;
+    border-radius: 4px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: var(--color-brand-red);
+    background: var(--color-brand-primary);
   }
 }
 
@@ -45,12 +50,18 @@
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-accent));
   }
   
-  .glass-panel {
-    background: rgba(26, 26, 36, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+  .glass-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 10px 40px -10px rgba(15, 23, 42, 0.08);
+  }
+  
+  .shadow-soft {
+    box-shadow: 0 20px 40px -15px rgba(37, 99, 235, 0.15);
   }
 }

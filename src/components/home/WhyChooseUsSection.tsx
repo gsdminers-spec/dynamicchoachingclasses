@@ -1,34 +1,50 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle2, Trophy, Target, BookOpen } from "lucide-react";
 
 const benefits = [
-  { title: "Rigorous Curriculum", desc: "Designed to conquer the toughest concepts of Physics, Chemistry, and Biology." },
-  { title: "Elite Faculty", desc: "Learn directly from Altamash Sir (Maths) and Imran Ali Sir (Chemistry)." },
-  { title: "High Output Testing", desc: "Weekly brutal mock exams modeled on actual NEET and JEE formats." },
-  { title: "Tactical Execution", desc: "Clear strategies, time management, and no-nonsense concept clarification." }
+  { 
+    title: "Rigorous Curriculum", 
+    desc: "Comprehensive study material designed to master the toughest concepts of Physics, Chemistry, and Biology.",
+    icon: <BookOpen className="w-6 h-6 text-brand-primary" />
+  },
+  { 
+    title: "Elite Faculty", 
+    desc: "Learn directly from Altamash Sir (Maths) and Imran Ali Sir (Chemistry) with proven track records.",
+    icon: <Trophy className="w-6 h-6 text-brand-accent" />
+  },
+  { 
+    title: "High Output Testing", 
+    desc: "Weekly mock exams modeled strictly on the latest NEET and JEE formats.",
+    icon: <Target className="w-6 h-6 text-blue-500" />
+  },
+  { 
+    title: "Tactical Execution", 
+    desc: "Clear strategies, structured time management, and personalized mentorship.",
+    icon: <CheckCircle2 className="w-6 h-6 text-emerald-500" />
+  }
 ];
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="bg-brand-dark py-24 relative overflow-hidden">
-      <div className="container grid lg:grid-cols-2 gap-16 items-center">
+    <section className="bg-white py-24 relative overflow-hidden">
+      <div className="container max-w-7xl mx-auto px-4 grid xl:grid-cols-2 gap-16 lg:gap-24 items-center">
         <motion.div
            initial={{ opacity: 0, x: -50 }}
            whileInView={{ opacity: 1, x: 0 }}
            viewport={{ once: true }}
-           transition={{ duration: 0.6 }}
+           transition={{ duration: 0.8, ease: "easeOut" }}
            className="space-y-8"
         >
-          <div className="inline-block px-4 py-2 bg-brand-gold text-brand-dark font-black text-sm uppercase tracking-widest border-l-4 border-white">
-            The Difference
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-brand-accent font-bold text-sm tracking-wide border border-emerald-100">
+            The Dynamic Difference
           </div>
-          <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter leading-[1.1]">
-            Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-red to-brand-gold">Our Protocol</span> works
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+            Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-blue-400">Our Protocol</span> Works
           </h2>
-          <p className="text-gray-400 font-medium text-lg max-w-lg">
-            We don&apos;t just teach; we drill. Structural learning architectures built to extract the maximum potential from every student.
+          <p className="text-slate-600 text-lg md:text-xl font-medium max-w-lg leading-relaxed">
+            We don't just teach; we empower. Our structured learning architectures are built to extract the maximum potential from every aspiring student.
           </p>
 
           <div className="grid sm:grid-cols-2 gap-6 pt-8">
@@ -39,33 +55,42 @@ export default function WhyChooseUsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 + (i * 0.1) }}
-                className="bg-zinc-900 border-t-[6px] border-brand-red p-6 hover:bg-zinc-800 transition-colors duration-300"
+                className="bg-slate-50 border border-slate-100 rounded-3xl p-6 hover:bg-white hover:shadow-xl hover:shadow-brand-primary/5 transition-all duration-300 group"
               >
-                <CheckCircle className="text-brand-gold w-8 h-8 mb-4" />
-                <h4 className="text-white font-bold text-xl uppercase mb-2">{item.title}</h4>
-                <p className="text-gray-400 text-sm font-medium">{item.desc}</p>
+                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h4 className="text-slate-900 font-extrabold text-lg mb-2">{item.title}</h4>
+                <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* Abstract Brutalist Art / Image area */}
+        {/* Premium Abstract Info Graphic / Image Area */}
         <motion.div
-           initial={{ opacity: 0, scale: 0.9 }}
-           whileInView={{ opacity: 1, scale: 1 }}
+           initial={{ opacity: 0, scale: 0.95, y: 30 }}
+           whileInView={{ opacity: 1, scale: 1, y: 0 }}
            viewport={{ once: true }}
-           transition={{ duration: 0.6, delay: 0.3 }}
-           className="relative h-full min-h-[400px] lg:min-h-[600px] bg-zinc-800 flex items-center justify-center p-8 border-r-[16px] border-brand-gold relative overflow-hidden"
+           transition={{ duration: 0.8, delay: 0.3 }}
+           className="relative h-full min-h-[500px] lg:min-h-[600px] flex items-center justify-center p-8 rounded-[40px] bg-slate-900 overflow-hidden shadow-2xl"
         >
-           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "radial-gradient(#fff 2px, transparent 2px)", backgroundSize: "40px 40px" }} />
+           {/* Decorative Background grid/dots */}
+           <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(white 2px, transparent 2px)", backgroundSize: "30px 30px" }} />
            
-           <div className="relative z-10 w-full h-[80%] bg-zinc-900 border-4 border-brand-red flex flex-col justify-center items-center text-center p-8 shadow-[12px_12px_0px_0px_#FFB300]">
-              <div className="text-8xl font-black text-transparent -webkit-text-stroke-2 -webkit-text-stroke-white opacity-20 absolute top-4 left-4">
-                DOMINATE
+           {/* Soft glow */}
+           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-primary/20 rounded-full blur-[100px]" />
+
+           <div className="relative z-10 w-full max-w-md bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-10 flex flex-col justify-center items-center text-center shadow-2xl">
+              <div className="w-20 h-20 mb-8 rounded-full bg-gradient-to-br from-brand-primary to-blue-400 flex items-center justify-center shadow-lg shadow-brand-primary/30">
+                <Trophy className="w-10 h-10 text-white" />
               </div>
-              <p className="text-2xl font-bold text-white uppercase tracking-widest z-10 mt-12 bg-black px-4 py-2 border-l-4 border-brand-red">
-                Excellence is a habit. <br/><span className="text-brand-gold">Not an act.</span>
+              <p className="text-2xl md:text-3xl font-extrabold text-white tracking-tight leading-tight">
+                Excellence is a habit. <br/><span className="text-brand-accent">Not an act.</span>
               </p>
+              <div className="mt-8 pt-8 border-t border-white/10 w-full">
+                <p className="text-slate-300 font-medium">Join the ranks of top achievers who chose Dynamic Coaching.</p>
+              </div>
            </div>
         </motion.div>
       </div>

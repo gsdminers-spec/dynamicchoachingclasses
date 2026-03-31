@@ -15,6 +15,7 @@ export default function Navbar() {
     { name: "Results", href: "/results" },
     { name: "Gallery", href: "/gallery" },
     { name: "Notices", href: "/notices" },
+    { name: "Resources", href: "/resources" },
     { name: "Contact", href: "/contact" },
   ];
 
@@ -23,34 +24,35 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 100, damping: 20 }}
-      className="fixed top-0 left-0 right-0 z-50 bg-brand-dark border-b-4 border-brand-red py-4 px-6 md:px-12 flex justify-between items-center shadow-[0_8px_0px_0px_#0A0A0A]"
+      className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 py-3 px-6 md:px-12 flex justify-between items-center shadow-sm"
     >
-      <Link href="/" className="flex items-center gap-3">
-        <div className="relative w-12 h-12 overflow-hidden border-2 border-brand-gold bg-zinc-200">
+      <Link href="/" className="flex items-center gap-3 group">
+        <div className="relative w-12 h-12 overflow-hidden rounded-full shadow-sm border border-slate-100 group-hover:shadow-md transition-all">
           <Image src="/images/logo.jpeg" alt="Dynamic Coaching Classes" fill className="object-cover" />
         </div>
         <div className="hidden md:block">
-          <h2 className="text-xl font-bold leading-tight">DYNAMIC</h2>
-          <span className="text-xs tracking-widest text-brand-gold uppercase">Coaching Classes</span>
+          <h2 className="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-brand-primary transition-colors">DYNAMIC</h2>
+          <span className="text-[10px] font-semibold tracking-widest text-brand-accent uppercase">Coaching Classes</span>
         </div>
       </Link>
 
       {/* Desktop Links */}
       <div className="hidden md:flex items-center gap-8">
         {links.map((link) => (
-          <Link key={link.name} href={link.href} className="text-sm font-medium hover:text-brand-red transition-colors relative group">
+          <Link key={link.name} href={link.href} className="text-sm font-semibold text-slate-600 hover:text-brand-primary transition-colors relative group py-2">
             {link.name}
-            <span className="absolute -bottom-2 left-0 w-0 h-0.5 bg-brand-red transition-all duration-300 group-hover:w-full" />
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-brand-primary rounded-full transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100" />
           </Link>
         ))}
       </div>
 
       {/* Mobile Menu Button */}
       <button 
-        className="md:hidden text-white hover:text-brand-red transition-colors"
+        className="md:hidden text-slate-800 p-2 hover:bg-slate-100 rounded-full transition-colors"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle menu"
       >
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d={isOpen ? "M6 18L18 6M6 6l12 12" : "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"} />
         </svg>
       </button>
@@ -58,16 +60,16 @@ export default function Navbar() {
       {/* Mobile Menu Dropdown */}
       {isOpen && (
         <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-full left-4 right-4 bg-brand-dark border-4 border-brand-red shadow-[8px_8px_0px_0px_#D32F2F] flex flex-col p-4 md:hidden mt-2"
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          className="absolute top-[110%] left-4 right-4 bg-white rounded-2xl border border-slate-100 shadow-xl flex flex-col overflow-hidden md:hidden"
         >
           {links.map((link) => (
             <Link 
               key={link.name} 
               href={link.href} 
               onClick={() => setIsOpen(false)}
-              className="py-3 text-center border-b border-white/5 hover:bg-white/5 hover:text-brand-red transition-all"
+              className="py-4 px-6 text-sm font-medium text-slate-700 border-b border-slate-50 last:border-0 hover:bg-slate-50 hover:text-brand-primary transition-colors"
             >
               {link.name}
             </Link>
