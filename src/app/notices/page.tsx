@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { notices } from "@/data/mockData";
+import Link from "next/link";
 import { Bell, Calendar, ChevronRight } from "lucide-react";
 
 export default function NoticesPage() {
@@ -48,13 +49,13 @@ export default function NoticesPage() {
             const month = dateObj.toLocaleString('default', { month: 'short' });
             
             return (
+              <Link href={`/notices/${notice.id}`} key={notice.id} className="block group">
               <motion.div
-                 key={notice.id}
                  initial={{ opacity: 0, y: 20 }}
                  whileInView={{ opacity: 1, y: 0 }}
                  viewport={{ once: true }}
                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                 className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 flex flex-col sm:flex-row gap-6 group hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 relative overflow-hidden"
+                 className="bg-white rounded-2xl border border-slate-100 p-6 sm:p-8 flex flex-col sm:flex-row gap-6 hover:shadow-xl hover:shadow-blue-900/5 transition-all duration-300 relative overflow-hidden h-full"
               >
                  {/* Modern Date Badge */}
                  <div className="bg-blue-50 border border-blue-100 rounded-2xl p-4 sm:w-32 flex flex-col justify-center items-center shrink-0 group-hover:bg-brand-primary group-hover:border-brand-primary transition-colors duration-300">
@@ -83,6 +84,7 @@ export default function NoticesPage() {
                     </div>
                  </div>
               </motion.div>
+              </Link>
             )
           })}
         </div>

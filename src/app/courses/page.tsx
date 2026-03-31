@@ -61,13 +61,13 @@ export default function CoursesPage() {
 
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-10">
           {courses.map((course, i) => (
+            <Link href={`/courses/${course.id}`} key={course.id} className="block group">
             <motion.div
-              key={course.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className="bg-white rounded-3xl p-8 md:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-300 flex flex-col h-full group relative overflow-hidden"
+              className="bg-white rounded-3xl p-8 md:p-10 border border-slate-100 shadow-xl shadow-slate-200/40 hover:-translate-y-1 hover:shadow-2xl hover:shadow-blue-900/5 transition-all duration-300 flex flex-col h-full relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50/50 to-indigo-50/50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
               
@@ -101,6 +101,7 @@ export default function CoursesPage() {
                 </ul>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </section>

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { faculty } from "@/data/mockData";
 import { CheckCircle } from "lucide-react";
 
@@ -176,8 +177,8 @@ export default function AboutPage() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {faculty.map((member, i) => (
+            <Link href={`/faculty/${member.id}`} key={member.id} className="block group">
             <motion.div
-              key={member.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -205,6 +206,7 @@ export default function AboutPage() {
                 </p>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
       </section>

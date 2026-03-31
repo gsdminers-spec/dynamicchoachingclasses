@@ -40,13 +40,13 @@ export default function CoursesSection() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {courses.slice(0, 3).map((course: any, i: number) => (
+            <Link href={`/courses/${course.id}`} key={course.id} className="block group">
             <motion.div
-              key={course.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
-              className="group relative bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 p-8 flex flex-col items-start overflow-hidden hover:-translate-y-2 cursor-pointer"
+              className="relative bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 p-8 flex flex-col items-start overflow-hidden hover:-translate-y-2 cursor-pointer h-full"
             >
               {/* Subtle gradient hover effect */}
               <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/5 rounded-full blur-3xl -mr-10 -mt-10 group-hover:bg-brand-primary/10 transition-colors duration-500" />
@@ -65,14 +65,14 @@ export default function CoursesSection() {
               
               <div className="mt-auto pt-6 border-t border-slate-100 w-full flex justify-between items-center relative z-10">
                 <span className="font-bold text-slate-400 text-sm group-hover:text-slate-600 transition-colors duration-300">View Program Details</span>
-                <Link
-                  href="/courses"
+                <div
                   className="w-10 h-10 rounded-full bg-slate-50 border border-slate-200 flex items-center justify-center text-brand-primary group-hover:bg-brand-primary group-hover:text-white group-hover:border-brand-primary transition-all duration-300"
                 >
                   <ArrowRight className="w-5 h-5" />
-                </Link>
+                </div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </div>
 
