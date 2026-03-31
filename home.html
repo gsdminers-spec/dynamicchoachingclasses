@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dynamic Coaching Classes | Akola</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Work+Sans:ital,wght@0,400;0,500;0,600;1,500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed-dim": "#ffb3ac",
+                        "tertiary-fixed": "#d6e3ff",
+                        "secondary-fixed-dim": "#ffba38",
+                        "on-secondary-container": "#6a4800",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae7e7",
+                        "on-primary-fixed": "#410003",
+                        "on-primary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#5b403d",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary-container": "#fff2f0",
+                        "background": "#fcf9f8",
+                        "secondary": "#7e5700",
+                        "on-tertiary-fixed-variant": "#00468c",
+                        "surface-container-highest": "#e5e2e1",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#0056aa",
+                        "surface": "#fcf9f8",
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-container": "#f2f4ff",
+                        "surface-bright": "#fcf9f8",
+                        "outline": "#8f6f6c",
+                        "on-background": "#1b1c1c",
+                        "primary": "#af101a",
+                        "surface-tint": "#ba1a20",
+                        "tertiary-container": "#276fca",
+                        "on-secondary-fixed-variant": "#604100",
+                        "outline-variant": "#e4beba",
+                        "surface-container": "#f0eded",
+                        "inverse-on-surface": "#f3f0ef",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed-dim": "#a9c7ff",
+                        "error": "#ba1a1a",
+                        "primary-container": "#d32f2f",
+                        "surface-dim": "#dcd9d9",
+                        "error-container": "#ffdad6",
+                        "secondary-container": "#feb300",
+                        "inverse-primary": "#ffb3ac",
+                        "on-tertiary-fixed": "#001b3d",
+                        "inverse-surface": "#303030",
+                        "secondary-fixed": "#ffdeac",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-fixed": "#281900",
+                        "on-primary-fixed-variant": "#930010",
+                        "on-surface": "#1b1c1c"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans", "sans-serif"],
+                        "body": ["Work Sans", "sans-serif"],
+                        "label": ["Work Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "2px",
+                        "lg": "2px",
+                        "xl": "2px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, #d32f2f 0%, #212121 100%);
+        }
+        .custom-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="bg-[#fcf9f8] dark:bg-[#1a1a1a] docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center w-full px-6 py-4 max-w-full mx-auto">
+<div class="text-2xl font-black tracking-tighter text-[#af101a] font-headline uppercase">
+                Dynamic Coaching
+            </div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-[#af101a] font-bold border-b-2 border-[#af101a] pb-1 font-label" href="#">Home</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#af101a] transition-colors duration-200 font-label" href="#">Courses</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#af101a] transition-colors duration-200 font-label" href="#">Admissions</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#af101a] transition-colors duration-200 font-label" href="#">Results</a>
+<a class="text-slate-700 dark:text-slate-300 font-medium hover:text-[#af101a] transition-colors duration-200 font-label" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<div class="p-2 hover:bg-[#f0eded] transition-colors duration-200 rounded cursor-pointer">
+<span class="material-symbols-outlined text-[#af101a]">location_on</span>
+</div>
+<button class="bg-primary text-on-primary px-6 py-2 font-bold hover:bg-primary-container transition-all active:scale-95 duration-150 rounded">
+                    Enquire Now
+                </button>
+</div>
+</div>
+<div class="bg-[#f0eded] h-[2px] w-full"></div>
+</nav>
+<!-- Announcement Banner -->
+<div class="bg-secondary-container text-on-secondary-container py-3 px-6 text-center font-bold tracking-wide uppercase text-sm border-b border-outline-variant/20">
+        New 11th Batch Starting 10th April 2026 — Admissions Open!
+    </div>
+<!-- Hero Section -->
+<section class="relative hero-gradient min-h-[870px] flex items-center overflow-hidden">
+<div class="absolute inset-0 opacity-10">
+<img class="w-full h-full object-cover grayscale" data-alt="blurred background of a university lecture hall with rows of seats and a large projection screen in high contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANCYcfOIJbf1PYdy5Jvt1i21ROTmZuLh8Z1PT6GsegAO-9SZ3AtDVzKcyXglRbLu4Fvaa1U6mcz8UMv8Ymh81GOFSU6JxHUqbkaJI9L7QSmJvLeaX8xxzDUhvnGPty75RbPdQHGp8ZTZY9p8L6ks064-asQvOJihvz1HAizBkPjpyx86QYC32E6U33uq2WyZn9qZwYL9QAiYHxrmqzCXX_BQemXc3A6grJVOCoqVEhZqiJk3jYija-WUvlemk4aDbpWND8t6CXNqo"/>
+</div>
+<div class="container mx-auto px-6 relative z-10 grid md:grid-cols-2 gap-12 items-center">
+<div class="space-y-8">
+<div class="inline-flex items-center gap-2 text-white/80 bg-white/10 px-4 py-1 rounded-sm backdrop-blur-sm">
+<span class="material-symbols-outlined text-secondary-container text-sm">location_on</span>
+<span class="text-sm font-medium tracking-widest uppercase">Akola, Maharashtra</span>
+</div>
+<h1 class="text-5xl md:text-7xl lg:text-8xl font-headline font-extrabold text-white leading-tight tracking-tighter uppercase">
+                    IMRAN ALI SIR'S <br/>
+<span class="text-secondary-container">DYNAMIC</span> COACHING
+                </h1>
+<p class="text-2xl md:text-3xl font-body italic font-medium text-secondary-container tracking-wide">
+                    "Realize Your Self Confidence"
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-primary text-white px-8 py-4 text-lg font-bold hover:bg-primary-container transition-all active:scale-95 flex items-center gap-2">
+                        Enroll Now
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<button class="bg-secondary-container text-on-secondary-container px-8 py-4 text-lg font-bold hover:brightness-110 transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+                        Call / WhatsApp
+                    </button>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="border-[12px] border-white/10 relative">
+<img alt="Dynamic Students" class="w-full aspect-[4/5] object-cover" data-alt="portrait of serious focused indian engineering students studying together with textbooks and calculators in a modern classroom setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT0itksmfnxwSn1PrRtFtf4Wo2cH0pLWQfQMoaJM0EhsQnxhHxxdvfs4wa-RYD7BeF4JqaiT0E2m3ts3d8Fwgf43Zqab-xA3mTeB7eMreDIiQ05glG_cOvH8o7E9AVv-rCv78FZcmZ8POEfd6q6MujLQ_CClfVfU_pYDVh_cxJgOiH16B13VEfUG-dnDMUs0tYNHAM4NTC6pJ3LIjDf3FUXZQ5elO6fd0aYU6S7Uk1tBNicTKij4W_UpwH-AfLM-ejlA_vbatBP3c"/>
+<div class="absolute -bottom-6 -left-6 bg-primary p-8 text-white">
+<p class="text-4xl font-headline font-black">#1</p>
+<p class="text-xs uppercase tracking-widest font-bold">In Akola Region</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Counter Section -->
+<section class="py-20 bg-surface-container-lowest">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+<!-- Stat Item 1 -->
+<div class="bg-white p-8 border-l-4 border-primary custom-shadow group hover:-translate-y-1 transition-transform">
+<div class="text-4xl md:text-5xl font-headline font-black text-primary mb-2">14+</div>
+<div class="h-0.5 w-12 bg-secondary-container mb-4 group-hover:w-full transition-all duration-300"></div>
+<div class="text-on-surface font-bold uppercase tracking-wider text-sm">Years Experience</div>
+</div>
+<!-- Stat Item 2 -->
+<div class="bg-white p-8 border-l-4 border-primary custom-shadow group hover:-translate-y-1 transition-transform">
+<div class="text-4xl md:text-5xl font-headline font-black text-primary mb-2">1000+</div>
+<div class="h-0.5 w-12 bg-secondary-container mb-4 group-hover:w-full transition-all duration-300"></div>
+<div class="text-on-surface font-bold uppercase tracking-wider text-sm">Students Guided</div>
+</div>
+<!-- Stat Item 3 -->
+<div class="bg-white p-8 border-l-4 border-primary custom-shadow group hover:-translate-y-1 transition-transform">
+<div class="text-4xl md:text-5xl font-headline font-black text-primary mb-2">95%+</div>
+<div class="h-0.5 w-12 bg-secondary-container mb-4 group-hover:w-full transition-all duration-300"></div>
+<div class="text-on-surface font-bold uppercase tracking-wider text-sm">Results Secured</div>
+</div>
+<!-- Stat Item 4 -->
+<div class="bg-white p-8 border-l-4 border-primary custom-shadow group hover:-translate-y-1 transition-transform">
+<div class="text-4xl md:text-5xl font-headline font-black text-primary mb-2">4</div>
+<div class="h-0.5 w-12 bg-secondary-container mb-4 group-hover:w-full transition-all duration-300"></div>
+<div class="text-on-surface font-bold uppercase tracking-wider text-sm">Expert Faculty</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Courses Quick Overview -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-6">
+<div class="mb-16">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface uppercase tracking-tighter">
+                    Our <span class="text-primary">Programs</span>
+</h2>
+<div class="h-2 w-32 bg-primary mt-4"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- NEET Card -->
+<div class="bg-white border-2 border-primary p-8 flex flex-col h-full hover:shadow-xl transition-all group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold mb-4 uppercase">NEET</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Comprehensive coaching for medical aspirants with specialized focus on Biology and chemistry concepts.</p>
+<a class="inline-flex items-center gap-2 font-bold text-primary group-hover:translate-x-2 transition-transform uppercase text-sm" href="#">
+                        Learn More <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- JEE Card -->
+<div class="bg-white border-2 border-tertiary p-8 flex flex-col h-full hover:shadow-xl transition-all group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-tertiary" style="font-variation-settings: 'FILL' 1;">engineering</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold mb-4 uppercase">JEE (Main + Adv)</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Rigorous problem-solving and analytical training for top-tier engineering entrance examinations.</p>
+<a class="inline-flex items-center gap-2 font-bold text-tertiary group-hover:translate-x-2 transition-transform uppercase text-sm" href="#">
+                        Learn More <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- MHT-CET Card -->
+<div class="bg-white border-2 border-[#2E7D32] p-8 flex flex-col h-full hover:shadow-xl transition-all group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-[#2E7D32]" style="font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold mb-4 uppercase">MHT-CET</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Strategic preparation focusing on the Maharashtra state syllabus and exam patterns for engineering &amp; pharmacy.</p>
+<a class="inline-flex items-center gap-2 font-bold text-[#2E7D32] group-hover:translate-x-2 transition-transform uppercase text-sm" href="#">
+                        Learn More <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+<!-- Foundation Card -->
+<div class="bg-white border-2 border-secondary-container p-8 flex flex-col h-full hover:shadow-xl transition-all group">
+<div class="mb-6">
+<span class="material-symbols-outlined text-5xl text-secondary" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<h3 class="text-2xl font-headline font-extrabold mb-4 uppercase">Foundation</h3>
+<p class="text-on-surface-variant mb-8 flex-grow">Strengthening fundamentals for 8th, 9th, and 10th grade students to build a solid base for future competitive exams.</p>
+<a class="inline-flex items-center gap-2 font-bold text-secondary group-hover:translate-x-2 transition-transform uppercase text-sm" href="#">
+                        Learn More <span class="material-symbols-outlined">chevron_right</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-24 bg-[#FFF8E1]">
+<div class="container mx-auto px-6">
+<div class="text-center mb-20">
+<h2 class="text-4xl md:text-5xl font-headline font-black text-on-surface uppercase tracking-tight">
+                    Why <span class="text-primary">Dynamic</span> Coaching?
+                </h2>
+<p class="font-body italic text-secondary text-lg mt-2">The Gold Standard in Science Education</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-12 gap-y-16">
+<!-- Reason 1 -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-primary flex items-center justify-center rounded-full text-white">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 uppercase">Experienced Faculty</h4>
+<p class="text-on-surface-variant">Led by Imran Ali Sir, our team brings over a decade of domain expertise.</p>
+</div>
+</div>
+<!-- Reason 2 -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-primary flex items-center justify-center rounded-full text-white">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 uppercase">Concept-Based Teaching</h4>
+<p class="text-on-surface-variant">We don't just teach for exams; we build deep conceptual understanding.</p>
+</div>
+</div>
+<!-- Reason 3 -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-primary flex items-center justify-center rounded-full text-white">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 uppercase">Regular Tests</h4>
+<p class="text-on-surface-variant">Weekly topic-wise tests and monthly full-length mock exams to track progress.</p>
+</div>
+</div>
+<!-- Reason 4 -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-primary flex items-center justify-center rounded-full text-white">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">person_search</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 uppercase">Personal Attention</h4>
+<p class="text-on-surface-variant">Limited batch sizes ensuring every student gets their doubts cleared instantly.</p>
+</div>
+</div>
+<!-- Reason 5 -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-primary flex items-center justify-center rounded-full text-white">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 uppercase">Result Oriented</h4>
+<p class="text-on-surface-variant">A proven track record of top rankers in NEET, JEE and CET exams.</p>
+</div>
+</div>
+<!-- Reason 6 -->
+<div class="flex gap-6 items-start">
+<div class="flex-shrink-0 w-16 h-16 bg-primary flex items-center justify-center rounded-full text-white">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<h4 class="text-xl font-headline font-bold mb-2 uppercase">Affordable Fees</h4>
+<p class="text-on-surface-variant">Quality education made accessible with flexible payment plans.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-16 bg-primary text-white">
+<div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+<div>
+<h3 class="text-3xl font-headline font-black uppercase mb-2">Ready to Start Your Journey?</h3>
+<p class="text-lg opacity-90 font-body">Book a demo lecture and experience the dynamic difference.</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-secondary-container text-on-secondary-container px-10 py-4 font-bold text-lg hover:bg-white transition-colors uppercase">Visit Center</button>
+<button class="border-2 border-white text-white px-10 py-4 font-bold text-lg hover:bg-white hover:text-primary transition-colors uppercase">Call Us</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#1a1a1a] text-white pt-16 pb-8 border-t-4 border-[#af101a]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 w-full px-8 py-12 max-w-7xl mx-auto">
+<!-- Brand Column -->
+<div class="space-y-6">
+<div class="text-2xl font-bold text-white uppercase font-headline">Dynamic Coaching</div>
+<p class="text-slate-400 font-work-sans text-sm leading-relaxed">
+                    Akola's premier institute for Science education, dedicated to excellence in NEET, JEE, and Foundation courses under the expert guidance of Imran Ali Sir.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 border border-slate-700 flex items-center justify-center hover:bg-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">public</span>
+</a>
+<a class="w-10 h-10 border border-slate-700 flex items-center justify-center hover:bg-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">video_library</span>
+</a>
+<a class="w-10 h-10 border border-slate-700 flex items-center justify-center hover:bg-primary transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-lg">chat</span>
+</a>
+</div>
+</div>
+<!-- Links Column -->
+<div class="space-y-6">
+<h4 class="text-xl font-bold text-[#feb300] uppercase font-headline">Quick Links</h4>
+<ul class="space-y-3">
+<li><a class="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 font-work-sans text-sm uppercase tracking-wide" href="#">NEET Coaching</a></li>
+<li><a class="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 font-work-sans text-sm uppercase tracking-wide" href="#">JEE Preparation</a></li>
+<li><a class="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 font-work-sans text-sm uppercase tracking-wide" href="#">Foundation Courses</a></li>
+<li><a class="text-slate-400 hover:text-white transition-transform duration-200 inline-block hover:translate-x-1 font-work-sans text-sm uppercase tracking-wide" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<!-- Contact Column -->
+<div class="space-y-6">
+<h4 class="text-xl font-bold text-[#feb300] uppercase font-headline">Contact Info</h4>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-[#feb300]">location_on</span>
+<span class="text-slate-400 text-sm font-work-sans">Opposite Nutan Hindi School, Shivaji College Road, Akola, Maharashtra</span>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-[#feb300]">call</span>
+<span class="text-slate-400 text-sm font-work-sans">+91 9765244367</span>
+</li>
+<li class="flex gap-4">
+<span class="material-symbols-outlined text-[#feb300]">mail</span>
+<span class="text-slate-400 text-sm font-work-sans">info@dynamiccoachingakola.com</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-800 text-center text-slate-500 font-work-sans text-sm">
+            © 2024 Dynamic Coaching Classes Akola. All Rights Reserved.
+        </div>
+</footer>
+<!-- WhatsApp Floating Button -->
+<a class="fixed bottom-8 right-8 bg-[#25D366] text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50" href="https://wa.me/919765244367">
+<svg fill="currentColor" height="32" viewbox="0 0 24 24" width="32" xmlns="http://www.w3.org/2000/svg">
+<path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.29-4.171c1.589.945 3.554 1.443 5.548 1.444 5.279 0 9.574-4.295 9.577-9.574 0-2.559-1.001-4.965-2.825-6.788-1.825-1.825-4.232-2.826-6.788-2.826-5.279 0-9.575 4.296-9.577 9.574 0 2.097.549 4.14 1.595 5.937l-1.021 3.735 3.84-.131-3.13-1.371z"></path>
+</svg>
+</a>
+</body></html>
