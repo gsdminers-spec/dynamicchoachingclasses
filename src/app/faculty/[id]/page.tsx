@@ -10,8 +10,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function FacultyProfilePage({ params }: { params: { id: string } }) {
-  const member = faculty.find((f) => f.id === params.id);
+export default async function FacultyProfilePage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const member = faculty.find((f) => f.id === id);
 
   if (!member) {
     notFound();
@@ -65,6 +66,22 @@ export default function FacultyProfilePage({ params }: { params: { id: string } 
             <p className="text-slate-600 leading-relaxed mb-8">
               {member.name} is dedicated to helping students achieve remarkable success by providing crystalline conceptual clarity and continuous motivation. With exceptional experience in {member.subject}, they ensure every student aims for the top.
             </p>
+            
+            {member.achievements && member.achievements.length > 0 && (
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-slate-900 mb-4">Key Achievements & Highlights</h3>
+                <ul className="space-y-3">
+                  {member.achievements.map((achievement, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-emerald-50 flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <CheckCircle className="text-brand-emerald w-4 h-4" />
+                      </div>
+                      <span className="text-slate-700 font-medium">{achievement}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             
             <div className="flex gap-4 border-t border-slate-200 pt-6">
               <div className="flex items-center gap-3">

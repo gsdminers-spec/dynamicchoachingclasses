@@ -9,8 +9,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function NoticeDetailPage({ params }: { params: { id: string } }) {
-  const notice = notices.find((n) => n.id.toString() === params.id);
+export default async function NoticeDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const notice = notices.find((n) => n.id.toString() === id);
 
   if (!notice) {
     notFound();
@@ -56,9 +57,14 @@ export default function NoticeDetailPage({ params }: { params: { id: string } })
           </h1>
           
           <div className="prose prose-lg prose-slate max-w-none">
-            <p className="text-slate-700 leading-relaxed md:text-xl">
+            <p className="text-slate-600 leading-relaxed md:text-xl font-medium border-l-4 border-brand-primary pl-4 mb-8">
               {notice.description}
             </p>
+            {notice.content && (
+              <div className="text-slate-700 leading-relaxed whitespace-pre-wrap">
+                {notice.content}
+              </div>
+            )}
           </div>
         </div>
       </section>

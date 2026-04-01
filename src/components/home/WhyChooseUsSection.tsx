@@ -31,36 +31,36 @@ export default function WhyChooseUsSection() {
     <section className="bg-white py-24 relative overflow-hidden">
       <div className="container max-w-7xl mx-auto px-4 grid xl:grid-cols-2 gap-16 lg:gap-24 items-center">
         <motion.div
-           initial={{ opacity: 0, x: -50 }}
-           whileInView={{ opacity: 1, x: 0 }}
-           viewport={{ once: true }}
+           initial={{ opacity: 0, y: 30 }}
+           whileInView={{ opacity: 1, y: 0 }}
+           viewport={{ once: true, margin: "-20px" }}
            transition={{ duration: 0.8, ease: "easeOut" }}
-           className="space-y-8"
+           className="space-y-6 md:space-y-8"
         >
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 text-brand-accent font-bold text-sm tracking-wide border border-emerald-100">
             The Dynamic Difference
           </div>
-          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.1]">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.2]">
             Why <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-primary to-blue-400">Our Protocol</span> Works
           </h2>
-          <p className="text-slate-600 text-lg md:text-xl font-medium max-w-lg leading-relaxed">
+          <p className="text-slate-600 text-base sm:text-lg md:text-xl font-medium max-w-lg leading-relaxed">
             We don't just teach; we empower. Our structured learning architectures are built to extract the maximum potential from every aspiring student.
           </p>
 
-          <div className="grid sm:grid-cols-2 gap-6 pt-8">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 pt-4 md:pt-8 xl:pr-10">
             {benefits.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 + (i * 0.1) }}
-                className="bg-slate-50 border border-slate-100 rounded-3xl p-6 hover:bg-white hover:shadow-xl hover:shadow-brand-primary/5 transition-all duration-300 group"
+                viewport={{ once: true, margin: "-20px" }}
+                transition={{ delay: 0.1 + (i * 0.1) }}
+                className="bg-slate-50 border border-slate-100 rounded-3xl p-5 md:p-6 hover:bg-white hover:shadow-xl hover:shadow-brand-primary/5 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-white shadow-sm border border-slate-100 flex items-center justify-center mb-4 md:mb-5 group-hover:scale-110 transition-transform duration-300">
                   {item.icon}
                 </div>
-                <h4 className="text-slate-900 font-extrabold text-lg mb-2">{item.title}</h4>
+                <h4 className="text-slate-900 font-extrabold text-base md:text-lg mb-2">{item.title}</h4>
                 <p className="text-slate-500 text-sm font-medium leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
@@ -71,9 +71,9 @@ export default function WhyChooseUsSection() {
         <motion.div
            initial={{ opacity: 0, scale: 0.95, y: 30 }}
            whileInView={{ opacity: 1, scale: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8, delay: 0.3 }}
-           className="relative h-full min-h-[500px] lg:min-h-[600px] flex items-center justify-center p-8 rounded-[40px] bg-slate-900 overflow-hidden shadow-2xl"
+           viewport={{ once: true, margin: "-20px" }}
+           transition={{ duration: 0.8, delay: 0.2 }}
+           className="relative w-full h-full min-h-[350px] md:min-h-[500px] lg:min-h-[600px] flex items-center justify-center p-6 md:p-8 rounded-[32px] md:rounded-[40px] bg-slate-900 overflow-hidden shadow-2xl"
         >
            {/* Decorative Background grid/dots */}
            <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(white 2px, transparent 2px)", backgroundSize: "30px 30px" }} />

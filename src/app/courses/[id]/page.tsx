@@ -9,8 +9,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function CourseDetailPage({ params }: { params: { id: string } }) {
-  const course = courses.find((c) => c.id === params.id);
+export default async function CourseDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const course = courses.find((c) => c.id === id);
 
   if (!course) {
     notFound();
@@ -62,6 +63,27 @@ export default function CourseDetailPage({ params }: { params: { id: string } })
               ))}
             </ul>
           </div>
+
+          {course.curriculum && course.curriculum.length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Curriculum Overview</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                {course.curriculum.map((subj, idx) => (
+                  <div key={idx} className="bg-white rounded-2xl p-6 border border-slate-200 hover:border-brand-emerald/30 shadow-sm shadow-slate-200/50 hover:shadow-md transition-all duration-300">
+                    <h4 className="text-lg font-bold text-brand-primary mb-4 border-b border-slate-100 pb-2">{subj.subject}</h4>
+                    <ul className="space-y-3">
+                      {subj.topics.map((topic, tIdx) => (
+                        <li key={tIdx} className="flex items-start gap-2 text-slate-600">
+                          <div className="w-1.5 h-1.5 rounded-full bg-brand-emerald mt-2 flex-shrink-0" />
+                          <span>{topic}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="text-center pt-8 border-t border-slate-200">
             <Link 
